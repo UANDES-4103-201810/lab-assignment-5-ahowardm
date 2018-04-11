@@ -29,6 +29,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    user_params = params.require(:ticket).permit(:name, :last_name, :email, :phone, :password, :address)
+    user_params = params.require(:user).permit(:name, :last_name, :email, :phone, :password, :address)
   end
 end

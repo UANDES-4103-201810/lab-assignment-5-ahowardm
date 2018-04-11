@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  	has_many :user_tickets	
+	has_many :user_tickets
 	has_many :tickets, :through => :user_tickets
 
 	validates :email, presence: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}

@@ -28,6 +28,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    event_params = params.require(:ticket).permit(:name, :description, :start_date, :place)
+    event_params = params.require(:event).permit(:name, :description, :start_date, :place)
   end
 end

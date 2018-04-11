@@ -29,6 +29,6 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    place_params = params.require(:ticket).permit(:name, :address, :capacity)
+    place_params = params.require(:place).permit(:name, :address, :capacity)
   end
 end
