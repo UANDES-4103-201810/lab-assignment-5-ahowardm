@@ -27,6 +27,15 @@ class PlacesController < ApplicationController
     redirect_to places_path
   end
 
+  def places_with_most_assistance
+    @places
+  end
+
+  #def top_ten_clients
+  #  @users_tickets = UserTicket.group(:user).count.sort_by {|key, value| value }.reverse!.first(10)
+  #  render json: @users_tickets
+  #end
+
   private
   def place_params
     place_params = params.require(:place).permit(:name, :address, :capacity)

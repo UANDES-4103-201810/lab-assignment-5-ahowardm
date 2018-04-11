@@ -28,6 +28,10 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
+  def most_expensive_tickets
+    @tickets = Ticket.where(event_id: params[:id]).order('price desc').limit(10)
+  end
+
   private
     def ticket_params
       ticket_params = params.require(:ticket).permit(:description, :price, :event)

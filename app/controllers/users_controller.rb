@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def top_ten_clients
+    @users_tickets = UserTicket.group(:user).count.sort_by {|key, value| value }.reverse!.first(10)
+    render json: @users_tickets
+  end
+
   private
   def user_params
     user_params = params.require(:user).permit(:name, :last_name, :email, :phone, :password, :address)
